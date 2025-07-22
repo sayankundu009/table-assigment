@@ -1,125 +1,58 @@
-const projects = [
-    { id: 201, name: "CI/CD Pipeline", startDate: "2024‑11‑20", status: "Completed" },
-    { id: 202, name: "Kubernetes Migration", startDate: "2025‑04‑10", status: "In Progress" },
-    { id: 203, name: "Q2 Outreach", startDate: "2025‑04‑01", status: "Not Started" },
-    { id: 204, name: "Onboarding Revamp", startDate: "2025‑01‑05", status: "Completed" },
-    { id: 205, name: "NPS Survey", startDate: "2025‑05‑22", status: "In Progress" },
-    { id: 206, name: "Brand Refresh", startDate: "2025‑02‑01", status: "In Progress" }
-];
-
-const employees = [
+const products = [
     {
-        id: 101,
-        name: "Aisha Banerjee",
-        department: "Engineering",
-        role: "Frontend Developer",
-        email: "aisha.banerjee@example.com",
-        phone: "+919876543210",
-        projects: [201, 202],
-        salary: 95000
+        id: 1,
+        name: "Wireless Headphones",
+        description: "High-quality wireless headphones with noise cancellation.",
+        price: 99.99,
+        image: "https://picsum.photos/200/100?random=1"
     },
     {
-        id: 102,
-        name: "Rahul Mehta",
-        department: "Engineering",
-        role: "Backend Developer",
-        email: "rahul.mehta@example.com",
-        phone: "+919123456789",
-        projects: [],
-        salary: 105000
+        id: 2,
+        name: "Smartphone Case",
+        description: "Durable protective case for smartphones.",
+        price: 24.99,
+        image: "https://picsum.photos/200/100?random=2"
     },
     {
-        id: 103,
-        name: "Keerthi Rao",
-        department: "Design",
-        role: "UX Designer",
-        email: "keerthi.rao@example.com",
-        phone: "+919988777665",
-        projects: [206],
-        salary: 120000
+        id: 3,
+        name: "Laptop Stand",
+        description: "Adjustable aluminum laptop stand for better ergonomics.",
+        price: 49.99,
+        image: "https://picsum.photos/200/100?random=3"
     },
     {
-        id: 104,
-        name: "Sanjay Kulkarni",
-        department: "Marketing",
-        role: "SEO Specialist",
-        email: "sanjay.k@example.com",
-        phone: "+919870011223",
-        projects: [203],
-        salary: 88000
+        id: 4,
+        name: "USB-C Cable",
+        description: "Fast charging USB-C cable, 6ft length.",
+        price: 12.99,
+        image: "https://picsum.photos/200/100?random=4"
     },
     {
-        id: 105,
-        name: "Neha Sharma",
-        department: "Human Resources",
-        role: "HR Manager",
-        email: "neha.sharma@example.com",
-        phone: "+919001234567",
-        projects: [204, 205],
-        salary: 115000
+        id: 5,
+        name: "Wireless Mouse",
+        description: "Ergonomic wireless mouse with precision tracking.",
+        price: 34.99,
+        image: "https://picsum.photos/200/100?random=5"
     },
     {
-        id: 106,
-        name: "Arjun Singh",
-        department: "Finance",
-        role: "Accountant",
-        email: "arjun.singh@example.com",
-        phone: "+919012345678",
-        projects: [],
-        salary: 78000
+        id: 6,
+        name: "Bluetooth Speaker",
+        description: "Portable Bluetooth speaker with 20W output.",
+        price: 79.99,
+        image: "https://picsum.photos/200/100?random=6"
     },
     {
-        id: 107,
-        name: "Priya Desai",
-        department: "Engineering",
-        role: "DevOps Engineer",
-        email: "priya.desai@example.com",
-        phone: "+919321098765",
-        projects: [201, 202],
-        salary: 99000
+        id: 7,
+        name: "Mechanical Keyboard",
+        description: "RGB mechanical keyboard with Cherry MX switches.",
+        price: 129.99,
+        image: "https://picsum.photos/200/100?random=7"
     },
     {
-        id: 108,
-        name: "Vikram Kapoor",
-        department: "Sales",
-        role: "Account Executive",
-        email: "vikram.kapoor@example.com",
-        phone: "+919765432109",
-        projects: [203],
-        salary: 67000
-    },
-    {
-        id: 109,
-        name: "Meera Iyer",
-        department: "Customer Success",
-        role: "CS Manager",
-        email: "meera.iyer@example.com",
-        phone: "+919234567801",
-        projects: [204, 205],
-        salary: 112000
-    },
-    {
-        id: 110,
-        name: "Kabir Khan",
-        department: "Design",
-        role: "Graphic Designer",
-        email: "kabir.khan@example.com",
-        phone: "+919887654321",
-        projects: [206],
-        salary: 54000
+        id: 8,
+        name: "Webcam",
+        description: "1080p HD webcam with built-in microphone.",
+        price: 59.99,
+        image: "https://picsum.photos/200/100?random=8"
     }
 ];
-
-const departments = ["Engineering", "Design", "Marketing", "Human Resources", "Finance", "Sales", "Customer Success"];
-const roles = ["Frontend Developer", "Backend Developer", "UX Designer", "SEO Specialist", "HR Manager", "Accountant", "DevOps Engineer", "Account Executive", "CS Manager", "Graphic Designer"];
-
- // TODO: Implement the logic to show the employees in the table
-
-
- // TODO: Implement the logic to show the filters in the UI
-
-
- // TODO: Implement the logic to filter the employees based on the filters
-
-
- // TODO: Implement the employee details view drawer

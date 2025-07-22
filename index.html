@@ -19,23 +19,23 @@
             <div class="col-lg-4 col-md-6 mb-2">
                 <div class="input-group">
                     <span class="input-group-text">🔎</span>
-                    <input type="text" class="form-control" placeholder="Search by name" aria-label="Search" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="Search by name" aria-label="Search" aria-describedby="basic-addon1" id="name-filter">
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 mb-2">
-                <select class="form-select">
+                <select class="form-select" id="department-filter">
                     <option value="">All Departments</option>
                 </select>
             </div>
             <div class="col-lg-2 col-md-3 mb-2">
-                <select class="form-select">
+                <select class="form-select" id="role-filter">
                     <option value="">All Roles</option>
                 </select>
             </div>
             <div class="col-lg-2 col-md-3 mb-2">
-                <select class="form-select">
+                <select class="form-select" id="salary-filter">
                     <option value="">All Salaries</option>
-                    <option value="0-60000">Less than 60,000</option>
+                    <option value="1-60000">Less than 60,000</option>
                     <option value="60000-80000">60,000 - 80,000</option>
                     <option value="80000-100000">80,000 - 100,000</option>
                     <option value="100000-120000">100,000 - 120,000</option>
@@ -43,8 +43,8 @@
                 </select>
             </div>
             <div class="col-lg-2 col-md-6 mb-2 d-flex gap-2">
-                <button type="button" class="btn btn-primary flex-fill">Filter</button>
-                <button type="button" class="btn btn-secondary flex-fill">Reset</button>
+                <button type="button" class="btn btn-primary flex-fill" id="search">Filter</button>
+                <button type="button" class="btn btn-secondary flex-fill" id="reset">Reset</button>
             </div>
         </div>
 
@@ -59,22 +59,22 @@
                             <th>Salary</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>IT</td>
-                            <td>Developer</td>
-                            <td>100000</td>
-                        </tr>
-                        <tr>
-                            <td>Jane Smith</td>
-                            <td>HR</td>
-                            <td>Manager</td>
-                            <td>120000</td>
-                        </tr>
+                    <tbody id="employee-table">
+                        
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
+    <div id="backdrop" class="hidden">
+        <h3>Employee Information</h3>
+        <div id="basic">
+        </div>
+        <div id="nav">
+            <button id="info_btn" class="active">Information</button>
+            <button id="pro_btn">Projects</button>
+        </div>
+        <div id="info_list">
         </div>
     </div>
     <script src="script.js"></script>

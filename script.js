@@ -36,7 +36,7 @@ const employees = [
         email: "keerthi.rao@example.com",
         phone: "+919988777665",
         projects: [206],
-        salary: 120000
+        salary: 125000
     },
     {
         id: 104,
@@ -115,11 +115,127 @@ const roles = ["Frontend Developer", "Backend Developer", "UX Designer", "SEO Sp
 
  // TODO: Implement the logic to show the employees in the table
 
+const tableBody = document.getElementById("employee-table");
+
+
+ 
 
  // TODO: Implement the logic to show the filters in the UI
 
+const departmentFilter = document.getElementById("department-filter");
+const roleFilter = document.getElementById("role-filter");
+const nameFilter = document.getElementById("name-filter");
+const salaryFilter = document.getElementById("salary-filter");
+const search = document.getElementById("search");
+const reset = document.getElementById("reset");
+const backdrop = document.getElementById("backdrop");
+const basic = document.getElementById("basic");
+const info_list = document.getElementById("info_list");
+const info_btn = document.getElementById("info_btn");
+const pro_btn = document.getElementById("pro_btn");
+
+renderEntries(employees);
+
+departments.forEach((department) =>  createOptions(department, departmentFilter));
+
+roles.forEach((role) => createOptions(role, roleFilter));
+
+function createOptions(data, selectElement) {
+    const option = document.createElement("option");
+    option.innerHTML = data;
+    option.value = data;
+    selectElement.appendChild(option);
+}
+
+function renderEntries(collection){
+    tableBody.innerHTML = "";
+    collection.forEach((employee) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td> ${employee.name} </td>
+            <td> ${employee.department} </td>
+            <td> ${employee.role} </td>
+            <td> ${employee.salary} </td>`;
+        tableBody.appendChild(row);
+        row.style.cursor = "pointer";
+        row.addEventListener("click", () => backdropDisplay(employee));
+    });
+}
+
+function backdropDisplay(employee){
+    console.log('Called');
+    backdrop.classList.toggle("hidden");
+    pro_btn.classList.remove("active");
+    info_btn.classList.add("active");
+    basic.innerHTML = `<div class="circle">${employee.name[0]}</div>`;
+    basic.innerHTML += `<h5 style = 'line-height: 2.5rem;'> ${employee.name} </h5>` +
+    `<span>${employee.email} <br></span>`;
+    info_list.innerHTML = "";
+    info_list.innerHTML = `Employee ID: ${employee.id} <br> Phone Number: ${employee.phone}`;
+    
+    pro_btn.addEventListener("click", () => {
+        pro_btn.classList.add("active");
+        info_btn.classList.remove("active");
+        if (employee.projects.length){
+            info_list.innerHTML = "";
+            employee.projects.forEach((id) => {
+                projects.forEach((obj) => {
+                    if( id === obj.id){
+                        info_list.innerHTML += `<p>Project Code: ${obj.id} <br>
+                        Project Name: ${obj.name} <br>
+                        Start Date: ${obj.startDate} <br> 
+                        Status: ${obj.status} </p>`;
+                    }
+                });
+            });
+        }
+        else
+            info_list.innerHTML = "Projects : None";            
+    });
+
+    info_btn.addEventListener("click", () => {
+        pro_btn.classList.remove("active");
+        info_btn.classList.add("active");
+        info_list.innerHTML = `Employee ID: ${employee.id} <br> Phone Number: ${employee.phone}`;
+    });
+
+}
 
  // TODO: Implement the logic to filter the employees based on the filters
 
+search.addEventListener("click", () => {
+    let name = nameFilter.value;
+    let dept = departmentFilter.value;
+    let role = roleFilter.value;
+    let salary = salaryFilter.value.split("-");
+    
+    const result = employees.filter((employee) => {
+        let found = false;
+        if (employee.department === dept)
+            found = true;
+        
+        if (employee.role === role)
+            found = true;
+
+        if ( (salary[0] && employee.salary > salary[0]) && (!salary[1] || employee.salary < salary[1]))
+            found = true;
+
+        if(name && employee.name.toLowerCase().match(name.toLowerCase()) !== null)
+            found = true;
+
+        return found;
+    });
+
+    renderEntries(result);
+});
+
+reset.addEventListener("click", () => {
+    renderEntries(employees);
+    departmentFilter.value = "";
+    roleFilter.value = "";
+    nameFilter.value = "";
+    salaryFilter.value = "";
+});
 
  // TODO: Implement the employee details view drawer
+
+ 

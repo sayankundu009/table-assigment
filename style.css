@@ -11,3 +11,12 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     transition: box-shadow 0.15s ease-in-out;
 }
+
+.hidden{
+    display: none;
+}
+
+.error{
+    color: rgba(231, 80, 80, 1);
+    font-size: 0.8rem;
+}

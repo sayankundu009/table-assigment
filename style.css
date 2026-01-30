@@ -1,4 +1,5 @@
-#backdrop{
+#backdrop,
+#editdrop {
     position: fixed;
     right: 0px;
     top: 0px;
@@ -11,16 +12,37 @@
     border-radius: 20px 0px 0px 20px;
 }
 
-#backdrop > h3{
+#backdrop>h3 {
     padding: 10px;
 }
 
+#editdrop>#basic {
+    width: 100%;
+    line-height: 1.8rem;
+    margin-top: 20px;
+}
 
-.hidden{
+#editdrop li {
+    padding-bottom: 10px;
+}
+
+#editdrop button {
+    margin: 10px;
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 0.8rem;
+}
+
+#editdrop {
+    padding: 25px 25px;
+}
+
+.hidden {
     display: none;
 }
 
-.circle{
+.circle {
     height: 60px;
     width: 60px;
     border: 1px solid black;
@@ -31,7 +53,7 @@
     font-size: 2rem;
 }
 
-#basic{
+#basic {
     display: grid;
     grid-template-rows: 40px 20px;
     grid-template-columns: 60px auto;
@@ -39,29 +61,52 @@
     box-sizing: border-box;
 }
 
-#basic > *{
+#basic>* {
     padding: 0 10px;
 }
 
-button{
+button {
     background-color: rgb(223, 236, 247);
     border: none;
     border-bottom: 2px solid rgb(135, 201, 254);
     margin: 10px;
 }
 
-#nav{
+#nav {
     margin-bottom: 20px;
 }
 
-button:active{
+button:active {
     background-color: #90caf9;
     border-bottom: 2px solid #1976d2;
     color: #fff;
 }
 
-.active{
+.active {
     background-color: #90caf9;
     border-bottom: 2px solid #1976d2;
     color: #fff;
+}
+
+#addp-form {
+    line-height: 2.5rem;
+    width: 25%;
+}
+
+#addp-form input {
+    line-height: 1.5rem;
+    float: right;
+}
+
+#pagination {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+#pagination>button {
+    margin: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }

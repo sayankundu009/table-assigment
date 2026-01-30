@@ -45,10 +45,47 @@
             <div class="col-lg-2 col-md-6 mb-2 d-flex gap-2">
                 <button type="button" class="btn btn-primary flex-fill" id="search">Filter</button>
                 <button type="button" class="btn btn-secondary flex-fill" id="reset">Reset</button>
+                <button type="button" class="btn btn-light border flex-fill" id="add">+</button>
             </div>
         </div>
 
-        <div class="row">
+        <div>
+            <form id="addp-form" class="hidden">
+                <ul>
+                    <li>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name">
+                    </li>
+                    <li>
+                        <label for="department">Department</label>
+                        <input type="text" id="department" name="department">
+                    </li>
+                    <li>
+                        <label for="role">Role</label>
+                        <input type="text" id="role" name="role">
+                    </li>
+                    <li>
+                        <label for="salary">Salary</label>
+                        <input type="number" id="salary" name="salary">
+                    </li>
+                    <li>
+                        <label for="projects">Projects</label>
+                        <input type="text" id="projects" name="projects">
+                    </li>
+                    <li>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </li>
+                    <li>
+                        <label for="phone">Phone</label>
+                        <input type="number" id="phone" name="phone">
+                    </li>
+                    <button type="submit">Add</button>
+                    <button type="reset">Reset</button>
+                </ul>
+            </form>
+        </div>
+        <div class="row" id="employeeInfo">
             <div class="col-12">
                 <table class="table table-bordered">
                     <thead class="table-light">
@@ -57,6 +94,7 @@
                             <th>Department</th>
                             <th>Role</th>
                             <th>Salary</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody id="employee-table">
@@ -76,6 +114,50 @@
         </div>
         <div id="info_list">
         </div>
+    </div>
+    <div id="editdrop" class="hidden">
+        <h3>Employee Information</h3>
+        <div id="basic">
+            <form id="edit-form">
+                    <li>
+                        <label for="id">ID</label>
+                        <input type="email" id="id" name="id" readonly>
+                    </li>
+                    <li>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name">
+                    </li>
+                    <li>
+                        <label for="department">Department</label>
+                        <input type="text" id="department" name="department">
+                    </li>
+                    <li>
+                        <label for="role">Role</label>
+                        <input type="text" id="role" name="role">
+                    </li>
+                    <li>
+                        <label for="salary">Salary</label>
+                        <input type="number" id="salary" name="salary">
+                    </li>
+                    <li>
+                        <label for="projects">Projects</label>
+                        <input type="text" id="projects" name="projects">
+                    </li>
+                    <li>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </li>
+                    <li>
+                        <label for="phone">Phone</label>
+                        <input type="number" id="phone" name="phone">
+                    </li>
+                    <button type="submit">Save Edit</button>
+                    <button type="button" id="delete">Delete Employee</button>
+            </form>
+        </div>
+    </div>
+    <div id="pagination">
+        
     </div>
     <script src="script.js"></script>
 </body>
